@@ -1001,7 +1001,7 @@ sub db_connect
     # }
 
     my $trace_level = db_vim_eval("g:dbext_dbi_trace_level");
-    if ( ! $trace_level eq "0" ) {
+    if ( (!$trace_level) eq "0" ) {
         my $vim_dir = db_vim_eval("expand('".'$VIM'."')");
         $conn_local->trace($trace_level, $vim_dir.'\dbi_trace.txt');
     }
